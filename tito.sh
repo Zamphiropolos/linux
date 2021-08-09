@@ -32,13 +32,13 @@ fi
 sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
 # Downloading resources
 sudo mkdir /mediabots /floppy /virtio
-link1_status=$(curl -Is https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/t3ru2vstltaqb8kvf61c0tuib95ggp9l/t1aj57ft7lmstirft2e9gdicej3gd0kh/1628520375000/11884178843116686563/07617238649198072427/1fPQkdPruHILex8glSLsP64Sz7pRGbNii?e=download&authuser=0&nonce=39ugu9vhe9fhe&user=07617238649198072427&hash=42j3er1lhj1mpm02487kbcs6n2rrl4dh | grep HTTP | cut -f2 -d" " | head -1)
-link2_status=$(curl -Is https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/t3ru2vstltaqb8kvf61c0tuib95ggp9l/t1aj57ft7lmstirft2e9gdicej3gd0kh/1628520375000/11884178843116686563/07617238649198072427/1fPQkdPruHILex8glSLsP64Sz7pRGbNii?e=download&authuser=0&nonce=39ugu9vhe9fhe&user=07617238649198072427&hash=42j3er1lhj1mpm02487kbcs6n2rrl4dh | grep HTTP | cut -f2 -d" ")
-#sudo wget -P /mediabots https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/t3ru2vstltaqb8kvf61c0tuib95ggp9l/t1aj57ft7lmstirft2e9gdicej3gd0kh/1628520375000/11884178843116686563/07617238649198072427/1fPQkdPruHILex8glSLsP64Sz7pRGbNii?e=download&authuser=0&nonce=39ugu9vhe9fhe&user=07617238649198072427&hash=42j3er1lhj1mpm02487kbcs6n2rrl4dh # Windows Server 2012 R2 
+link1_status=$(curl -Is https://drive.google.com/uc?export=download&id=1fPQkdPruHILex8glSLsP64Sz7pRGbNii | grep HTTP | cut -f2 -d" " | head -1)
+link2_status=$(curl -Is https://drive.google.com/uc?export=download&id=1fPQkdPruHILex8glSLsP64Sz7pRGbNii | grep HTTP | cut -f2 -d" ")
+#sudo wget -P /mediabots https://drive.google.com/uc?export=download&id=1fPQkdPruHILex8glSLsP64Sz7pRGbNii # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -O /mediabots/https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/t3ru2vstltaqb8kvf61c0tuib95ggp9l/t1aj57ft7lmstirft2e9gdicej3gd0kh/1628520375000/11884178843116686563/07617238649198072427/1fPQkdPruHILex8glSLsP64Sz7pRGbNii?e=download&authuser=0&nonce=39ugu9vhe9fhe&user=07617238649198072427&hash=42j3er1lhj1mpm02487kbcs6n2rrl4dh
+	sudo wget -O /mediabots/https://drive.google.com/uc?export=download&id=1fPQkdPruHILex8glSLsP64Sz7pRGbNii
 elif [ $link2_status = "200" -o $link2_status = "301" -o $link2_status = "302" ] ; then 
-	sudo wget -P /mediabots https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/t3ru2vstltaqb8kvf61c0tuib95ggp9l/t1aj57ft7lmstirft2e9gdicej3gd0kh/1628520375000/11884178843116686563/07617238649198072427/1fPQkdPruHILex8glSLsP64Sz7pRGbNii?e=download&authuser=0&nonce=39ugu9vhe9fhe&user=07617238649198072427&hash=42j3er1lhj1mpm02487kbcs6n2rrl4dh
+	sudo wget -P /mediabots https://drive.google.com/uc?export=download&id=1fPQkdPruHILex8glSLsP64Sz7pRGbNii
 else
 	echo -e "${RED}[Error]${NC} ${YELLOW}Sorry! None of Windows OS image urls are available , please report about this issue on Github page : ${NC}https://github.com/mediabots/Linux-to-Windows-with-QEMU"
 	echo "Exiting.."
